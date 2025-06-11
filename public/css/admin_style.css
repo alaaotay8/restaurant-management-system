@@ -1,0 +1,1046 @@
+/* Importing fonts */
+@import url('admin_font.css');
+
+/* Root variables */
+:root{
+   --main-color:#fed330;
+   --red:#e74c3c;
+   --orange:#f39c12;
+   --black:#34495e;
+   --white:#fff;
+   --light-bg:#f5f5f5;
+   --light-color:#999;
+   --border:.2rem solid var(--black);
+   --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+/* Base styles */
+*{
+   font-family: 'Montserrat', sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;
+   text-decoration: none;
+   outline: none; border:none;
+}
+
+*::selection{
+   color:var(--white);
+   background-color: var(--main-color);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar{
+   width: 1rem;
+   height: .5rem;
+}
+
+::-webkit-scrollbar-track{
+  background-color: none;
+}
+
+::-webkit-scrollbar-thumb{
+   background-color: var(--main-color);
+}
+
+/* HTML and body styling */
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+}
+
+body{
+   background-color: var(--light-bg);
+   /* padding-bottom: 7rem; */
+}
+
+/* Section styling */
+section{
+   max-width: 1200px;
+   margin:0 auto;
+   padding:2rem;
+}
+
+/* Button styling */
+.btn,
+.delete-btn,
+.option-btn {
+   display: block;
+   margin-top: 1rem;
+   border-radius: .5rem;
+   cursor: pointer;
+   width: 100%;
+   font-size: 1.8rem;
+   color: var(--black);
+   padding: 1.2rem 3rem;
+   text-transform: capitalize;
+   text-align: center;
+}
+
+.btn {
+   background-color: var(--main-color);
+}
+
+.delete-btn {
+   background-color: var(--red);
+}
+
+.option-btn {
+   background-color: var(--orange);
+}
+
+.btn:hover,
+.delete-btn:hover,
+.option-btn:hover {
+   background-color: var(--light-color);
+}
+
+/* Flex button styling */
+.flex-btn {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+ }
+
+
+/* Message styling */
+.message{
+    position: sticky;
+    top: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--light-bg);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+ }
+
+ .message span{
+    font-size: 2rem;
+    color: var(--black);
+ }
+
+ .message i{
+    font-size: 2.5rem;
+    color: var(--red);
+    cursor: pointer;
+ }
+
+ .message i:hover{
+    color: var(--black);
+ }
+
+/* Alert Messages */
+.alert {
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+    border-radius: .5rem;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+
+/* Heading styling */
+.heading{
+   text-align: center;
+   margin-bottom: 2rem;
+   text-transform: capitalize;
+   color:var(--black);
+   font-size: 3rem;
+   padding-top: 2.6rem;
+}
+
+/* Style for category headings */
+.heading2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+    color: var(--black);
+    font-size: 2.2rem;
+    padding-top: 4rem;
+    border-bottom: 2.5rem;
+}
+
+/* Empty state styling */
+.empty{
+   border:var(--border);
+   border-radius: .5rem;
+   background-color: var(--white);
+   padding:1.5rem;
+   text-align: center;
+   width: 100%;
+   font-size: 2rem;
+   text-transform: capitalize;
+   color:var(--red);
+   box-shadow: var(--box-shadow);
+}
+
+/* Form container styling */
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.form-container form {
+    background-color: var(--white);
+    border-radius: .5rem;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
+    max-width: 50rem;
+    box-sizing: border-box;
+}
+
+.form-container form h3{
+   font-size: 2.5rem;
+   color:var(--black);
+   text-transform: capitalize;
+   margin-bottom: 1rem;
+}
+
+.form-container form p{
+   margin:1rem 0;
+   font-size: 2rem;
+   color:var(--light-color);
+}
+
+.form-container form p span{
+   color:var(--main-color);
+}
+
+.form-container form .box{
+   width: 100%;
+   background-color: var(--light-bg);
+   padding:1.4rem;
+   font-size: 1.4rem;
+   color:var(--black);
+   margin:1rem 0;
+   border:var(--border);
+   font-size: 1.8rem;
+   border-radius: .5rem;
+}
+
+/* Header styling */
+.header{
+   position: sticky;
+   top:0; left:0; right:0;
+   background-color: var(--white);
+   box-shadow: var(--box-shadow);
+   z-index: 1000;
+   border-bottom: var(--border);
+}
+
+.header .flex{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   position: relative;
+}
+
+.header .flex .logo{
+   font-size: 1.8rem;
+   color:var(--black);
+}
+
+.header .flex .logo span{
+   color:var(--main-color);
+}
+
+.header .flex .navbar a{
+   margin:0 1rem;
+   font-size: 2rem;
+   color:var(--light-color);
+}
+
+.header .flex .navbar a:hover{
+   color:var(--main-color);
+}
+
+.header .flex .icons > *{
+   font-size: 2.5rem;
+   cursor: pointer;
+   color:var(--light-color);
+   margin-left: 1.7rem;
+}
+
+.header .flex .icons > *:hover{
+   color:var(--main-color);
+}
+
+.header .flex .profile{
+   position: absolute;
+   top:125%; right:2rem;
+   background-color: var(--white);
+   box-shadow: var(--box-shadow);
+   border:var(--border);
+   border-radius: .5rem;
+   padding:2rem;
+   padding-top: 1rem;
+   width: 30rem;
+   display: none;
+   animation: fadeIn .2s linear;
+}
+
+@keyframes fadeIn {
+   0%{
+      transform: translateY(1rem);
+   }
+}
+
+.header .flex .profile p{
+   margin-bottom: 1rem;
+   font-size: 2rem;
+   text-align: center;
+   color:var(--black);
+}
+
+.header .flex .profile.active{
+   display: inline-block;
+}
+
+#menu-btn{
+   display: none;
+}
+
+/* Dashboard styling */
+
+.dashboard .heading {
+    padding : 1.5rem;
+}
+
+.dashboard .heading span{
+    color:var(--main-color);
+}
+
+.dashboard .box-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+   gap:1.5rem;
+   align-items: flex-start;
+}
+
+.dashboard .box-container .box{
+   text-align: center;
+   background-color: var(--white);
+   border:var(--border);
+   box-shadow: var(--box-shadow);
+   border-radius: .5rem;
+   text-align: center;
+   padding:1.5rem;
+}
+
+.dashboard .box-container .box h3{
+   font-size: 2.7rem;
+   color:var(--black);
+}
+
+.dashboard .box-container .box h3 span{
+   font-size: 2rem;
+}
+
+.dashboard .box-container .box p{
+   padding:1.5rem;
+   border-radius: .5rem;
+   background-color: var(--light-bg);
+   border-radius: .5rem;
+   font-size: 1.8rem;
+   border:var(--border);
+   margin:1rem 0;
+   color:var(--light-color);
+}
+
+/* Add products and categories form styling */
+.add-products form,
+.add-category form{
+   margin: 0 auto;
+   max-width: 50rem;
+   background-color: var(--white);
+   border-radius: .5rem;
+   box-shadow: var(--box-shadow);
+   border: var(--border);
+   padding: 2rem;
+   text-align: center;
+}
+
+.add-products form h3,
+.add-category form h3 {
+   margin-bottom: 1rem;
+   font-size: 2.5rem;
+   color: var(--black);
+   text-transform: capitalize;
+}
+
+.add-products form .box,
+.add-category form .box {
+   background-color: var(--light-bg);
+   border: var(--border);
+   width: 100%;
+   padding: 1.4rem;
+   font-size: 1.8rem;
+   color: var(--black);
+   border-radius: .5rem;
+   margin: 1rem 0;
+}
+
+
+/* add order Dropdown check list styling */
+.add-order form,
+.update-order form {
+    margin: 0 auto;
+    max-width: 50rem;
+    background-color: var(--white);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    padding: 2rem;
+    text-align: center;
+ }
+
+.add-order form h3,
+.update-order form h3 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    color: var(--black);
+    text-transform: capitalize;
+ }
+
+.add-order form .box,
+.update-order form .box {
+    background-color: var(--light-bg);
+    border: var(--border);
+    width: 100%;
+    padding: 1.4rem;
+    font-size: 1.8rem;
+    color: var(--black);
+    border-radius: .5rem;
+    margin: 1rem 0;
+    display: inline-block;
+    position: relative;
+}
+
+.add-order form .anchor,
+.update-order form .anchor {
+    background-color: var(--light-bg);
+    border: var(--border);
+    width: 100%;
+    padding: 1.4rem;
+    font-size: 1.8rem;
+    color: var(--black);
+    margin: 1rem 0;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.add-order form .anchor:after,
+.update-order form .anchor:after {
+    position: absolute;
+    content: "";
+    border-left: 2px solid var(--black);
+    border-top: 2px solid var(--black);
+    padding: 2px;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-135deg);
+}
+
+.add-order form .anchor .items,
+.update-order form .anchor .items {
+    position: absolute;
+    z-index: 1;
+    padding: 10px;
+    border: var(--border);
+    display: none;
+    margin-top: 5px;
+    background: var(--white);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.add-order form .anchor .items ul,
+.update-order form .anchor .items ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.add-order form .anchor .items ul li,
+.update-order form .anchor .items ul li {
+    margin: 5px 0;
+}
+
+.add-order form .anchor .items ul li strong,
+.update-order form .anchor .items ul li strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.6rem;
+    color: var(--black);
+}
+
+.add-order form .anchor .items ul li ul,
+.update-order form .anchor .items ul li ul {
+    padding-left: 20px;
+}
+
+.add-order form .anchor .items ul li ul li,
+.update-order form .anchor .items ul li ul li {
+    margin: 5px 0;
+    font-size: 1.4rem;
+    color: var(--black);
+    position: relative;
+    padding-right: 60px;
+}
+
+.add-order .remarks,
+.update-order .remarks {
+    width: 100%;
+    padding: 1.4rem;
+    font-size: 1.8rem;
+    color: var(--black);
+    background-color: var(--light-bg);
+    border: var(--border);
+    border-radius: .5rem;
+    margin: 1rem 0;
+    resize: vertical;
+    max-height: 7.2rem;
+    overflow-y: auto;
+}
+
+.add-order form .anchor .items ul li ul li {
+    position: relative;
+    padding-right: 60px;
+}
+
+
+.qty {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: var(--border);
+    font-size: 1.4rem;
+    color: var(--black);
+    width: 45px;
+    box-sizing: border-box;
+    display: inline-block;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.qty.enabled {
+    background-color: #fff;
+}
+
+/* Add table form styling */
+.add-table form{
+    margin: 0 auto;
+    max-width: 50rem;
+    background-color: var(--white);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    padding: 2rem;
+    text-align: center;
+}
+
+.add-table .heading {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    color: var(--black);
+    text-transform: capitalize;
+}
+
+.add-table label {
+    display: block;
+    font-size: 1.8rem;
+    color: var(--black);
+    margin-bottom: .5rem;
+}
+
+.add-table .box {
+    background-color: var(--light-bg);
+    border: var(--border);
+    width: 100%;
+    padding: 1.4rem;
+    font-size: 1.8rem;
+    color: var(--black);
+    border-radius: .5rem;
+    margin: 1rem 0;
+    display: inline-block;
+    position: relative;
+}
+
+.add-table select.box {
+    cursor: pointer;
+}
+
+/* Apply capitalize to all input fields, textareas, paragraphs, spans, and heading elements */
+input:not([type="email"]),
+textarea,
+p,
+span,
+h1, h2, h3,
+option {
+    text-transform: capitalize;
+}
+
+/* Show methods styling */
+
+.show-products .box-container,
+.show-categories .box-container,
+.show-orders .box-container,
+.show-tables .box-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 33rem);
+   gap: 1.5rem;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: flex-start;
+   align-items: stretch;
+}
+
+.show-products .box-container .box,
+.show-categories .box-container .box,
+.show-orders .box-container .box,
+.show-tables .box-container .box {
+   background-color: var(--white);
+   border-radius: .5rem;
+   box-shadow: var(--box-shadow);
+   border: var(--border);
+   padding: 1.5rem;
+   height: 100%;
+}
+
+.show-products .box-container .box img,
+.show-categories .box-container .box img {
+   width: 100%;
+   height: 20rem;
+   object-fit: contain;
+   margin-bottom: 1rem;
+}
+
+.show-products .box-container .box .price,
+.show-categories .box-container .box .price,
+.show-orders .box-container .box .price {
+   font-size: 2rem;
+   color: var(--black);
+   padding: 1rem 0;
+}
+
+.show-products .box-container .box .price span,
+.show-categories .box-container .box .price span,
+.show-orders .box-container .box .price span {
+   font-size: 1.5rem;
+}
+
+.show-products .box-container .box .flex,
+.show-categories .box-container .box .flex,
+.show-orders .box-container .box .flex {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+   justify-content: space-between;
+   margin-top: auto !important;
+}
+
+.show-products .box-container .box .flex .category,
+.show-categories .box-container .box .flex .category {
+   font-size: 1.8rem;
+   color: var(--main-color);
+}
+
+.show-products .box-container .box .flex .name,
+.show-categories .box-container .box .flex .name {
+   font-size: 2rem;
+   color: var(--black);
+   margin: .5rem 0;
+}
+
+
+#li-ordered-pr,
+.remarks .items li {
+    font-size: 1.6rem;
+    display: list-item;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#span-name, #span-qty, #span-price {
+    font-size: 1rem;
+    margin-right: auto;
+}
+
+/* Specific styles for product spans using IDs */
+#span-name {
+    font-weight: bold;
+}
+
+#span-qty {
+    color: #555;
+    font-weight: bold;
+}
+
+#span-price {
+    font-weight: bold;
+    color: #000;
+}
+
+
+
+.placed-orders .box-container .box .drop-down {
+    width: 100%;
+    margin: 1rem 0;
+    background-color: var(--light-bg);
+    padding: 0.8rem 1.4rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    border: var(--border);
+    border-radius: .5rem; /* Rounded corners */
+    box-sizing: border-box;
+}
+
+/* Show tables styling */
+
+
+ .show-tables .box p {
+    font-size: 1.6rem;
+    color: var(--black);
+    margin-bottom: 1rem;
+ }
+
+ .show-tables .box p span {
+    font-weight: bold;
+    color: var(--main-color);
+ }
+
+ .show-tables .flex-btn {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+ }
+
+
+/* Update form styling */
+.update-product form,
+.update-category form,
+.update-order form,
+.update-table form {
+   margin: 0 auto;
+   max-width: 50rem;
+   background-color: var(--white);
+   border-radius: .5rem;
+   box-shadow: var(--box-shadow);
+   border: var(--border);
+   padding: 2rem;
+   text-align: center;
+}
+
+.update-product form img,
+.update-category form img,
+.update-order form img,
+.update-table form img {
+   height: 25rem;
+   width: 100%;
+   object-fit: contain;
+}
+
+.update-product form .box,
+.update-category form .box,
+.update-order form .box,
+.update-table form .box {
+   background-color: var(--light-bg);
+   border: var(--border);
+   width: 100%;
+   padding: 1.4rem;
+   font-size: 1.8rem;
+   color: var(--black);
+   border-radius: .5rem;
+   margin: 1rem 0;
+}
+
+.update-product form textarea,
+.update-category form textarea,
+.update-order form textarea,
+.update-table form textarea {
+   height: 15rem;
+   resize: none;
+}
+
+.update-product form span,
+.update-category form span,
+.update-order form span,
+.update-table form span {
+   font-size: 1.7rem;
+   color: var(--black);
+}
+
+.update-table .inputBox {
+   margin: 1rem 0;
+   text-align: left;
+}
+
+.update-table .inputBox label {
+   display: block;
+   font-size: 1.7rem;
+   color: var(--black);
+   margin-bottom: .5rem;
+}
+
+.update-table .inputBox input,
+.update-table .inputBox select {
+   background-color: var(--light-bg);
+   border: var(--border);
+   width: 100%;
+   padding: 1.4rem;
+   font-size: 1.8rem;
+   color: var(--black);
+   border-radius: .5rem;
+   margin: 0;
+}
+
+
+
+
+/* Placed orders styling */
+.placed-orders .box-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 33rem);
+   gap:1.5rem;
+   justify-content: center;
+   align-items: flex-start;
+}
+
+.placed-orders .box-container .box{
+   background-color: var(--white);
+   border-radius: .5rem;
+   box-shadow: var(--box-shadow);
+   border:var(--border);
+   padding:2rem;
+   padding-top: 1rem;
+}
+
+.placed-orders .box-container .box p{
+   padding: .5rem 0;
+   line-height: 1.5;
+   font-size: 1.8rem;
+   color:var(--black);
+}
+
+#its{
+    font-size: 12px;
+}
+
+
+
+.placed-orders .box-container .box p span{
+   color:var(--main-color);
+}
+
+.placed-orders .box-container .box .drop-down,
+.show-tables .box-container .box .drop-down{
+    width: 100%;
+    margin: 1rem 0;
+    background-color: var(--light-bg);
+    padding: 1rem 1.4rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    border: var(--border);
+    border-radius: .5rem;
+}
+
+.placed-orders .box-container .box option {
+    font-size: 1.8rem;
+    text-overflow: ellipsis;
+}
+
+/* Accounts styling */
+.accounts .box-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 33rem);
+   gap:1.5rem;
+   justify-content: center;
+   align-items: flex-start;
+}
+
+.accounts .box-container .box{
+   background-color: var(--white);
+   border-radius: .5rem;
+   box-shadow: var(--box-shadow);
+   border:var(--border);
+   padding:2rem;
+   padding-top: 1rem;
+   text-align: center;
+   flex-direction: column;
+   flex-wrap: wrap;
+}
+
+.accounts .box-container .box p{
+   display: inline-block;
+   padding: .5rem 0;
+   font-size: 1.8rem;
+   color: var(--black);
+}
+
+.accounts .box-container .box p span{
+   color:var(--main-color);
+}
+
+/* Messages styling */
+.messages .box-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 33rem);
+   gap:1.5rem;
+   justify-content: center;
+   align-items: flex-start;
+}
+
+.messages .box-container .box{
+   background-color: var(--white);
+   border-radius: .5rem;
+   box-shadow: var(--box-shadow);
+   border:var(--border);
+   padding:2rem;
+   padding-top: 1rem;
+}
+
+.messages .box-container .box p{
+   padding: .5rem 0;
+   font-size: 1.8rem;
+   color:var(--black);
+}
+
+.messages .box-container .box p span{
+   color:var(--main-color);
+}
+
+/* Media queries */
+@media (max-width:991px){
+   html{
+      font-size: 55%;
+   }
+   .placed-orders .box-container .box .drop-down {
+    font-size: 14px;
+  }
+  .placed-orders .box-container .box option {
+    font-size: 12px;
+  }
+}
+
+@media (max-width:768px){
+   #menu-btn{
+      display: inline-block;
+   }
+
+   .header .flex .navbar{
+      position: absolute;
+      top:99%; left:0; right:0;
+      border-top: var(--border);
+      border-bottom: var(--border);
+      background-color: var(--white);
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      transition: .2s linear;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+   }
+
+   .header .flex .navbar.active{
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+   }
+
+   .header .flex .navbar a{
+      display: block;
+      margin:2rem;
+   }
+   .placed-orders .box-container .box .drop-down {
+    font-size: 12px;
+  }
+  .placed-orders .box-container .box option {
+    font-size: 10px;
+  }
+}
+
+@media (max-width:450px){
+   html{
+      font-size: 50%;
+   }
+
+   .flex-btn{
+      flex-flow: column;
+      gap:0;
+   }
+
+   .heading{
+      font-size: 3rem;
+   }
+
+   .show-products .box-container{
+      grid-template-columns: 1fr;
+   }
+
+   .placed-orders .box-container{
+      grid-template-columns: 1fr;
+   }
+
+   .accounts .box-container{
+      grid-template-columns: 1fr;
+   }
+
+   .placed-orders .box-container .box .drop-down {
+    font-size: 10px;
+  }
+  .placed-orders .box-container .box option {
+    font-size: 8px;
+  }
+}
+
+/* error style */
+.error {
+    color: #b30000;
+    background: #ffeaea;
+    border: 1px solid #b30000;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.form-container .error {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 400px;
+}

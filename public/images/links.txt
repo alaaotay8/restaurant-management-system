@@ -1,0 +1,23 @@
+font awesome cdn link
+httpscdnjs.comlibrariesfont-awesome
+
+google fonts
+httpsfonts.google.comspecimenRubik
+
+clip-path generator
+httpsbennettfeely.comclippy
+
+Editor  - visual studio code with Laetus Dark Vibrant Theme
+Browser  - google chrome
+UI Tool  - Figma
+localhost  xampp
+Images  Video  SVG  - 
+01 - httpswww.freepik.com
+02 - httpsstoryset.com
+03 - httpsundraw.co
+04 - httpspixabay.com
+05 - httpsunsplash.com
+06 - httpspixabay.com
+07 - httpswww.flaticon.com
+08 - httpspngtree.com
+09 - httpswww.pngegg.com

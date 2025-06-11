@@ -1,0 +1,23 @@
+/*
+mysql -u root -p restaurant_adminspace
+USE restaurant_adminspace;
+*/
+LOCK TABLES `products` WRITE;
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` (`id`, `name`, `category_id`, `price`, `image`, `created_at`, `updated_at`) VALUES 
+(1, 'Vegetarian Pizza', 1, 12.00, 'uploaded_img/YBm4rVgDkQbXxCVD8QeyNAkY7dsmUgl1QUyCRD1Z.png', '2024-07-22 08:52:53', '2024-07-22 13:12:15'),
+(2, 'Burger', 1, 9.99, 'uploaded_img/g4OHTGqrJpbnZBkA9H6m93gTUuemkWqvUdH2d3fc.png', '2024-07-22 09:09:18', '2024-07-22 09:09:18'),
+(3, 'spaghetti', 2, 18.50, 'uploaded_img/IPhDObedxxUA1C6oE9DTfNBXrIwpCygONagK6efC.png', '2024-07-22 09:25:17', '2024-07-22 09:25:17'),
+(4, 'coffee', 3, 3.50, 'uploaded_img/Nmm1U3r670J7BDn1MUfe2cVFCGt3jYrm5hAWMUJZ.png', '2024-07-22 09:35:37', '2024-07-22 10:53:36'),
+(5, 'strawberry milkshake', 3, 11.00, 'uploaded_img/ut3fOs1m66ehPsf1i7tQyIcyYZZh8EMSWpYXNnCp.png', '2024-07-22 09:37:03', '2024-07-22 09:37:03'),
+(6, 'chocolate milkshake', 3, 10.50, 'uploaded_img/YsZGM5BeuQneWVEspLynjBLBH1T9rEzC5JT728Mw.png', '2024-07-22 09:38:02', '2024-07-22 09:38:02'),
+(7, 'fresh orange juice', 3, 6.50, 'uploaded_img/pgaI9Pnnd3CDqKEHeVAdvmJOmU5miCBflxL7sjBX.png', '2024-07-22 09:38:57', '2024-07-22 09:38:57'),
+(8, 'mojito', 3, 10.50, 'uploaded_img/hfwMAvdFgA3k4NZt8ZFvDXuOafsX3QJ7qwN37VuN.png', '2024-07-22 09:39:51', '2024-07-22 09:39:51'),
+(9, 'strawberry cake', 4, 8.00, 'uploaded_img/7HGDrefLdqQ9oW29BZNtE912hNa3yIddSAbmqOo7.png', '2024-07-22 09:43:27', '2024-07-22 09:43:27'),
+(10, 'Mint Chocolate Slice', 4, 10.00, 'uploaded_img/HBXQI1FA5FzGssgwhki8wv4fmFMt84EKFqHdc3Ir.png', '2024-07-22 09:45:34', '2024-07-22 09:45:34'),
+(11, 'Chocolate Cupcake', 4, 6.50, 'uploaded_img/jUIicSGEw43FuVX6SmmQuSlyXf8FxGO1OPWwsrhf.png', '2024-07-22 09:46:45', '2024-07-22 09:46:45'),
+(12, 'Asian-Style Noodle Dish', 2, 19.00, 'uploaded_img/g5HoxjJeEtFQsW75qAj3NggPL4o3BCS04pdubW9h.png', '2024-07-22 09:48:33', '2024-07-22 09:48:33'),
+(13, 'Ham and Mushroom Pizza', 1, 15.00, 'uploaded_img/wYaLIUJKRtF08s3ELge5MRSfnbtPe1kYNfwc5KtM.png', '2024-07-22 09:50:13', '2024-07-22 09:50:13'),
+(14, 'Steak Stir-Fry', 2, 25.00, 'uploaded_img/o7O5kSsIEmCn2f64sFEsu2ovUbaM4qnKIlbOpyNO.png', '2024-07-22 09:51:55', '2024-07-22 09:51:55');
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;
+UNLOCK TABLES;

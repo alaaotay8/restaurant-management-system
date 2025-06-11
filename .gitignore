@@ -1,0 +1,34 @@
+# Laravel & Composer
+/vendor
+/node_modules
+
+# Laravel environment files
+.env
+.env.backup
+.env.production
+
+# Laravel storage and cache
+/public/storage
+/storage/*.key
+/storage/logs
+/storage/framework/cache
+/storage/framework/sessions
+/storage/framework/views
+
+# Laravel test and build files
+/.phpunit.cache
+/.phpunit.result.cache
+/public/build
+/public/hot
+
+# IDE & system files
+/.fleet
+/.idea
+/.vscode
+
+# Miscellaneous
+Homestead.json
+Homestead.yaml
+auth.json
+npm-debug.log
+yarn-error.log
