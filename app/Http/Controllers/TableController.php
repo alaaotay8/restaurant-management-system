@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Table;
 use Illuminate\Http\Request;
+use App\Models\Table;
 
 class TableController extends Controller
 {
     /**
-     * Display a listing of tables.
+     * Display a listing of all tables.
      */
     public function tables()
     {
@@ -25,21 +25,43 @@ class TableController extends Controller
     }
 
     /**
-     * Store a newly created table in storage.
+     * Store a newly created table in the database.
      */
     public function store(Request $request)
     {
+        // Custom validation messages for unique constraint
+        $messages = [
+            'table_number.unique' => 'The table number already exists. Please choose a different one.',
+        ];
+
+        // Validate input fields
         $request->validate([
-            'name' => 'required|string|max:100|unique:tables',
-            'capacity' => 'required|integer|min:1',
+            'table_number' => 'required|string|max:10|unique:tables,table_number',
+            'hall' => 'required|string|max:255',
+            'is_reserved' => 'required|boolean',
+        ], $messages);
+
+        // Create the table if validation passes
+        Table::create($request->all());
+
+        // Redirect to tables list with a success message
+        return redirect()->route('admin.tables')->with('message', 'Table added successfully');
+    }
+
+    /**
+     * Update the reserved status of a table.
+     */
+    public function updateReservedStatus(Request $request)
+    {
+        $request->validate([
+            'table_id' => 'required|exists:tables,id',
+            'is_reserved' => 'required|boolean',
         ]);
 
-        $table = new Table();
-        $table->name = $request->name;
-        $table->capacity = $request->capacity;
-        $table->save();
+        $table = Table::findOrFail($request->table_id);
+        $table->update($request->all());
 
-        return redirect()->route('admin.tables')->with('success', 'Table added successfully!');
+        return redirect()->route('admin.tables')->with('message', 'Table reserved status updated successfully.');
     }
 
     /**
@@ -47,46 +69,35 @@ class TableController extends Controller
      */
     public function edit($id)
     {
-        $table = Table::find($id);
-
-        if (!$table) {
-            return redirect()->route('admin.tables')->with('error', 'Table not found');
-        }
-
+        $table = Table::findOrFail($id);
         return view('tables.update_table', compact('table'));
     }
 
     /**
-     * Update the specified table in storage.
+     * Update the specified table in the database.
      */
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required|string|max:100|unique:tables,name,' . $id,
-            'capacity' => 'required|integer|min:1',
+            'table_number' => 'required|string|max:10',
+            'hall' => 'required|string|max:255',
+            'is_reserved' => 'required|boolean',
         ]);
 
-        $table = Table::find($id);
+        $table = Table::findOrFail($id);
+        $table->update($request->all());
 
-        if (!$table) {
-            return redirect()->route('admin.tables')->with('error', 'Table not found');
-        }
-
-        $table->name = $request->name;
-        $table->capacity = $request->capacity;
-        $table->save();
-
-        return redirect()->route('admin.tables')->with('success', 'Table updated successfully!');
+        return redirect()->route('admin.tables')->with('message', 'Table updated successfully');
     }
 
     /**
-     * Remove the specified table from storage.
+     * Remove the specified table from the database.
      */
     public function destroy($id)
     {
         $table = Table::findOrFail($id);
         $table->delete();
 
-        return redirect()->route('admin.tables')->with('success', 'Table deleted successfully!');
+        return redirect()->route('admin.tables')->with('message', 'Table deleted successfully');
     }
 }

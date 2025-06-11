@@ -34,7 +34,7 @@
             </div>
             <div class="content">
                 <h3>Why choose us?</h3>
-                <p>At Yes2Dev Restaurant, we are dedicated to providing an unforgettable dining experience. Our diverse menu includes delicious pizza, juicy burgers, succulent chicken dishes, and refreshing drinks. Located at 144 Rue Ennakhil, Immeuble Essid, 4100 Medenine, we offer a cozy and welcoming atmosphere for families and friends to enjoy great food together. Come and taste the difference!</p>
+                <p>At TayTaste Restaurant, we are dedicated to providing an unforgettable dining experience. Our diverse menu includes delicious pizza, juicy burgers, succulent chicken dishes, and refreshing drinks. Located at 144 Rue Ennakhil, Immeuble Essid, 4100 Medenine, we offer a cozy and welcoming atmosphere for families and friends to enjoy great food together. Come and taste the difference!</p>
                 <a href="{{ route('menu') }}" class="btn">Our Menu</a>
             </div>
         </div>
@@ -57,7 +57,7 @@
             <div class="box">
                 <img src="{{ asset('images/step-3.png') }}" alt="Step 3">
                 <h3>Enjoy Your Food</h3>
-                <p>Sit back, relax, and enjoy your tasty food from Yes2Dev Restaurant, delivered right to your door.</p>
+                <p>Sit back, relax, and enjoy your tasty food from TayTaste Restaurant, delivered right to your door.</p>
             </div>
 
         </div>
@@ -70,7 +70,7 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide slide">
                     <img src="{{ asset('images/pic-1.png') }}" alt="Review 1">
-                    <p>The food at Yes2Dev Restaurant is fantastic! The pizza and burgers are my favorites. The delivery was quick and the service was excellent. Highly recommend!</p>
+                    <p>The food at TayTaste Restaurant is fantastic! The pizza and burgers are my favorites. The delivery was quick and the service was excellent. Highly recommend!</p>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -94,7 +94,7 @@
                 </div>
                 <div class="swiper-slide slide">
                     <img src="{{ asset('images/pic-3.png') }}" alt="Review 3">
-                    <p>I love ordering from Yes2Dev! The menu has great variety and everything I've tried has been delicious. The delivery is always fast and reliable.</p>
+                    <p>I love ordering from TayTaste! The menu has great variety and everything I've tried has been delicious. The delivery is always fast and reliable.</p>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -118,7 +118,7 @@
                 </div>
                 <div class="swiper-slide slide">
                     <img src="{{ asset('images/pic-5.png') }}" alt="Review 5">
-                    <p>Yes2Dev Restaurant never disappoints! Their pizza is my favorite, and the drinks are always refreshing. Great service and fast delivery every time.</p>
+                    <p>TayTaste Restaurant never disappoints! Their pizza is my favorite, and the drinks are always refreshing. Great service and fast delivery every time.</p>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>

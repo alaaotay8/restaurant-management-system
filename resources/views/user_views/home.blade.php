@@ -210,7 +210,7 @@
                 },
             },
             autoplay: {
-                delay: 7000, // 7000 milliseconds = 7 seconds
+                delay: 4000, // 4000 milliseconds = 4 seconds
                 disableOnInteraction: false,
             },
         });

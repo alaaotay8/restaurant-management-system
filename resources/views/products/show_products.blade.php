@@ -1,4 +1,4 @@
-{{-- filepath: resources/views/products/show_products.blade.php --}}
+{{-- Show Products Blade View --}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,49 +14,58 @@
 
 @include('components.admin_header')
 
+<!-- Products Management Section -->
 <section class="show-products" style="padding-top: 5em;">
-    <!-- Add Product Button -->
-    <h1 class="heading">Add Product</h1>
-    <div class="register-btn-container" style="display: flex; justify-content: center; margin: 20px 0;">
-        <a href="{{ route('products.create') }}" class="option-btn add-product" style="width: 300px; margin: 0 10px;">Add new product</a>
-    </div>
+   <!-- Add Product Button -->
+   <h1 class="heading">Add Product</h1>
+   <div class="register-btn-container" style="display: flex; justify-content: center; margin: 20px 0;">
+      <a href="{{ route('products.create') }}" class="option-btn add-product" style="width: 300px; margin: 0 10px;">Add new product</a>
+   </div>
+   <!-- All Products Grouped by Category -->
+   <h1 class="heading">All Products</h1>
+   @forelse ($categories as $category)
+      <!-- Category Title -->
+      <h2 class="heading2">{{ $category->name }}</h2>
+      @php
+         $hasProducts = false;
+      @endphp
+      <div class="box-container">
+         @foreach ($products as $product)
+            @if ($product->category_id == $category->id)
+               @php
+                  $hasProducts = true;
+               @endphp
+               <!-- Product Card -->
+               <div class="box">
+                  <img src="{{ Storage::url($product->image) }}" alt="{{ $product->name }}">
+                  <div class="flex">
+                     <div class="name">{{ $product->name }}</div>
+                     <div class="category">{{ $category->name }}</div>
+                  </div>
+                  <div class="price">{{ $product->price }}<span> DT</span></div>
+                  <div class="flex" style="margin-top: auto ">
+                     <a href="{{ route('products.edit', $product->id) }}" class="option-btn">Update</a>
+                     <form action="{{ route('products.destroy', $product->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="delete-btn" onclick="return confirm('Delete this product?');">Delete</button>
+                     </form>
+                  </div>
+               </div>
+            @endif
+         @endforeach
+      </div>
+      <!-- No products in this category -->
+      @if (!$hasProducts)
+         <p class="empty">No products in this category!</p>
+      @endif
 
-    <!-- All Products Grouped by Category -->
-    <h1 class="heading">All Products</h1>
-    @forelse ($categories as $category)
-        <h2 class="heading2">{{ $category->name }}</h2>
-        @php $hasProducts = false; @endphp
-        <div class="box-container">
-            @foreach ($products as $product)
-                @if ($product->category_id == $category->id)
-                    @php $hasProducts = true; @endphp
-                    <div class="box">
-                        <img src="{{ Storage::url($product->image) }}" alt="{{ $product->name }}">
-                        <div class="flex">
-                            <div class="name">{{ $product->name }}</div>
-                            <div class="category">{{ $category->name }}</div>
-                        </div>
-                        <div class="price">{{ $product->price }}<span> DT</span></div>
-                        <div class="flex" style="margin-top: auto">
-                            <a href="{{ route('products.edit', $product->id) }}" class="option-btn">Update</a>
-                            <form action="{{ route('products.destroy', $product->id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="delete-btn" onclick="return confirm('Delete this product?');">Delete</button>
-                            </form>
-                        </div>
-                    </div>
-                @endif
-            @endforeach
-        </div>
-        @if (!$hasProducts)
-            <p class="empty">No products in this category!</p>
-        @endif
-        <br>
-    @empty
-        <p class="empty">No categories available!</p>
-        <br>
-    @endforelse
+      <br> <!-- Line break for spacing between categories -->
+   @empty
+      <!-- No categories available -->
+      <p class="empty">No categories available!</p>
+      <br>
+   @endforelse
 </section>
 
 <script src="{{ asset('js/admin_script.js') }}"></script>
